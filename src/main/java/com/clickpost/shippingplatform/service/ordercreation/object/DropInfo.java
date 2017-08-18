@@ -1,24 +1,19 @@
 package com.clickpost.shippingplatform.service.ordercreation.object;
 
-import com.sun.istack.internal.Nullable;
 
-public class DropAddress {
+public class DropInfo {
     private final String name_;
     private final String phone_;
-
-    @Nullable
-    private final String email_;
     private final String city_;
     private final String state_;
     private final String pinCode_;
     private final String country_;
     private final String address_;
 
-    public DropAddress(String name, String phone, String email, String city, String state, String pinCode, String country,
-                       String address) {
+    public DropInfo(String name, String phone, String city, String state, String pinCode, String country,
+                    String address) {
         name_ = name;
         phone_ = phone;
-        email_ = email;
         city_ = city;
         state_ = state;
         pinCode_ = pinCode;
@@ -32,10 +27,6 @@ public class DropAddress {
 
     public String getPhone() {
         return phone_;
-    }
-
-    public String getEmail() {
-        return email_;
     }
 
     public String getCity() {

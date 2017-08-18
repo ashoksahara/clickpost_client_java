@@ -1,6 +1,6 @@
 package com.clickpost.shippingplatform.service.ordercreation.object;
 
-public class ReturnAddress {
+public class ReturnInfo {
     private final String pinCode_;
     private final String city_;
     private final String country_;
@@ -9,7 +9,7 @@ public class ReturnAddress {
     private final String phone_;
     private final String address_;
 
-    public ReturnAddress(String pinCode, String city, String country, String name, String state, String phone, String address) {
+    public ReturnInfo(String pinCode, String city, String country, String name, String state, String phone, String address) {
         pinCode_ = pinCode;
         city_ = city;
         country_ = country;
