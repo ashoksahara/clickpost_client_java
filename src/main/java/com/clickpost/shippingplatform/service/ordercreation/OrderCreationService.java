@@ -7,6 +7,6 @@ import com.clickpost.shippingplatform.service.ordercreation.object.OrderCreation
 import com.clickpost.shippingplatform.service.ordercreation.object.OrderCreationResponse;
 
 public interface OrderCreationService {
-    public OrderCreationResponse crateOrderOnClickPost(OrderCreationObject orderCreationObject) throws ClickPostServerException,
-            OrderCreationException;
+    public OrderCreationResponse createOrderOnClickPost(OrderCreationObject orderCreationObject, String userName, String key)
+            throws ClickPostServerException, OrderCreationException;
 }

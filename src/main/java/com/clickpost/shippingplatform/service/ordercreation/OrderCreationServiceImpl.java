@@ -8,8 +8,8 @@ import com.clickpost.shippingplatform.service.ordercreation.object.OrderCreation
 
 public class OrderCreationServiceImpl implements OrderCreationService {
     @Override
-    public OrderCreationResponse crateOrderOnClickPost(OrderCreationObject orderCreationObject) throws ClickPostServerException,
-            OrderCreationException {
+    public OrderCreationResponse createOrderOnClickPost(OrderCreationObject orderCreationObject, String userName, String apiKey)
+            throws ClickPostServerException, OrderCreationException {
         return null;
     }
 }

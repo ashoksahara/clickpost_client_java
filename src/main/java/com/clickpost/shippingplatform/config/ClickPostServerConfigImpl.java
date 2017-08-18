@@ -29,4 +29,9 @@ public class ClickPostServerConfigImpl implements ClickPostServerConfig {
     public String getOrderCreationUrl() {
         return configuration_.getString("clickpost.ordercreation.url");
     }
+
+    @Override
+    public String getApiKey() {
+        return configuration_.getString("clickpost.apikey");
+    }
 }
