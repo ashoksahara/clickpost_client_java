@@ -4,14 +4,25 @@ package com.clickpost.shippingplatform.service.ordercreation.object;
 import org.testng.internal.Nullable;
 
 public class AdditionalInfo {
+    @Nullable
     private final DeliveryType deliveryType_;
+
+    @Nullable
     private final String rvpReason_;
+
+    @Nullable
     private final boolean async_;
 
     @Nullable
     private final String awbNumber_;
+
+    @Nullable
     private final boolean label_;
+
+    @Nullable
     private final String priority_;
+
+    @Nullable
     private final ReturnInfo returnInfo_;
 
     public AdditionalInfo(DeliveryType deliveryType, String rvpReason, boolean async, String awbNumber, boolean label,

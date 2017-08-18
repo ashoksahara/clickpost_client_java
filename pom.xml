@@ -9,6 +9,8 @@
     <version>1.0.0</version>
     <properties>
         <testng-version>6.8</testng-version>
+        <commons-configuration2.version>2.0</commons-configuration2.version>
+        <commons-beanutils.version>1.9.2</commons-beanutils.version>
     </properties>
 
     <dependencies>
@@ -17,6 +19,18 @@
             <artifactId>testng</artifactId>
             <version>${testng-version}</version>
             <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-configuration2</artifactId>
+            <version>${commons-configuration2.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <version>${commons-beanutils.version}</version>
         </dependency>
     </dependencies>
 
