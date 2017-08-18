@@ -13,6 +13,8 @@
         <commons-beanutils.version>1.9.2</commons-beanutils.version>
         <org.mockito.mockito-core.version>2.8.47</org.mockito.mockito-core.version>
         <wiremock.version>2.7.1</wiremock.version>
+        <json-simple.version>1.1.1</json-simple.version>
+        <jackson-core-version>2.8.0</jackson-core-version>
     </properties>
 
     <dependencies>
@@ -47,6 +49,32 @@
             <version>${wiremock.version}</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>com.googlecode.json-simple</groupId>
+            <artifactId>json-simple</artifactId>
+            <version>${json-simple.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${jackson-core-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>${jackson-core-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson-core-version}</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>

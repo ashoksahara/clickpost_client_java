@@ -5,18 +5,18 @@ public enum DeliveryType {
     FORWARD(1, "FORWARD"),
     REVERSE(2, "REVERSE");
 
-    private int ordinal_;
-    private String name_;
+    private int ordinal;
+    private String name;
 
 
     private DeliveryType(int ordinal, String name) {
-        ordinal_ = ordinal;
-        name_ = name;
+        this.ordinal = ordinal;
+        this.name = name;
     }
 
     public static DeliveryType getDeliveryTypeByOrdinal(int ordinal) {
         for (DeliveryType e : DeliveryType.values()) {
-            if (e.ordinal_ == ordinal) {
+            if (e.ordinal == ordinal) {
                 return e;
             }
         }
@@ -25,7 +25,7 @@ public enum DeliveryType {
 
     public static DeliveryType getDeliveryTypeByName(String name) {
         for (DeliveryType e : DeliveryType.values()) {
-            if (e.name_.equals(name)) {
+            if (e.name.equals(name)) {
                 return e;
             }
         }

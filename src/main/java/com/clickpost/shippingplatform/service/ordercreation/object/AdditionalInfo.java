@@ -5,62 +5,62 @@ import org.testng.internal.Nullable;
 
 public class AdditionalInfo {
     @Nullable
-    private final DeliveryType deliveryType_;
+    private final DeliveryType deliveryType;
 
     @Nullable
-    private final String rvpReason_;
+    private final String rvpReason;
 
     @Nullable
-    private final boolean async_;
+    private final boolean async;
 
     @Nullable
-    private final String awbNumber_;
+    private final String awbNumber;
 
     @Nullable
-    private final boolean label_;
+    private final boolean label;
 
     @Nullable
-    private final String priority_;
+    private final String priority;
 
     @Nullable
-    private final ReturnInfo returnInfo_;
+    private final ReturnInfo returnInfo;
 
     public AdditionalInfo(DeliveryType deliveryType, String rvpReason, boolean async, String awbNumber, boolean label,
                           String priority, ReturnInfo returnInfo) {
-        deliveryType_ = deliveryType;
-        rvpReason_ = rvpReason;
-        async_ = async;
-        awbNumber_ = awbNumber;
-        label_ = label;
-        priority_ = priority;
-        returnInfo_ = returnInfo;
+        this.deliveryType = deliveryType;
+        this.rvpReason = rvpReason;
+        this.async = async;
+        this.awbNumber = awbNumber;
+        this.label = label;
+        this.priority = priority;
+        this.returnInfo = returnInfo;
     }
 
     public DeliveryType getDeliveryType() {
-        return deliveryType_;
+        return deliveryType;
     }
 
     public String getRvpReason() {
-        return rvpReason_;
+        return rvpReason;
     }
 
     public boolean isAsync() {
-        return async_;
+        return async;
     }
 
     public String getAwbNumber() {
-        return awbNumber_;
+        return awbNumber;
     }
 
     public boolean isLabel() {
-        return label_;
+        return label;
     }
 
     public String getPriority() {
-        return priority_;
+        return priority;
     }
 
     public ReturnInfo getReturnInfo() {
-        return returnInfo_;
+        return returnInfo;
     }
 }

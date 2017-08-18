@@ -9,8 +9,8 @@ import org.apache.commons.configuration2.io.ClasspathLocationStrategy;
 
 public class ClickPostServerConfigImpl implements ClickPostServerConfig {
 
-    private static final String CONFIGURATION_FILE_NAME = "clickpost.properties";
-    private final ImmutableConfiguration configuration_;
+    private static final String CONFIGURATIONFILENAME = "clickpost.properties";
+    private final ImmutableConfiguration configuration;
 
 
     public ClickPostServerConfigImpl() throws ConfigurationException {
@@ -19,19 +19,19 @@ public class ClickPostServerConfigImpl implements ClickPostServerConfig {
                 new FileBasedConfigurationBuilder<FileBasedConfiguration>(PropertiesConfiguration.class)
                         .configure(params.properties()
                                 .setLocationStrategy(new ClasspathLocationStrategy())
-                                .setFileName(CONFIGURATION_FILE_NAME));
+                                .setFileName(CONFIGURATIONFILENAME));
         Configuration configuration = builder.getConfiguration();
-        configuration_ = ConfigurationUtils.unmodifiableConfiguration(configuration);
+        this.configuration = ConfigurationUtils.unmodifiableConfiguration(configuration);
     }
 
 
     @Override
     public String getOrderCreationUrl() {
-        return configuration_.getString("clickpost.ordercreation.url");
+        return configuration.getString("clickpost.ordercreation.url");
     }
 
     @Override
     public String getApiKey() {
-        return configuration_.getString("clickpost.apikey");
+        return configuration.getString("clickpost.apikey");
     }
 }

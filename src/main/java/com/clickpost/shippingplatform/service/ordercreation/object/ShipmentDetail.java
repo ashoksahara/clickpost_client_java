@@ -4,82 +4,81 @@ package com.clickpost.shippingplatform.service.ordercreation.object;
 import java.util.Date;
 
 public class ShipmentDetail {
-    private final ShipmentItemInfo[] shipmentItemInfo_;
-    private final int length_;
-    private final int height_;
-    private final int breadth_;
-    private final float weight_;
-    private final OrderType orderType_;
-    private final float codValue_;
-    private final String referenceNumber_;
-    private final String invoiceNumber_;
-    private final float invoiceValue_;
-    private final Date invoiceDate_;
-    private final int courierPartner_;
-
+    private final ShipmentItemInfo[] shipmentItemInfo;
+    private final int length;
+    private final int height;
+    private final int breadth;
+    private final float weight;
+    private final OrderType orderType;
+    private final float codValue;
+    private final String referenceNumber;
+    private final String invoiceNumber;
+    private final float invoiceValue;
+    private final Date invoiceDate;
+    private final int courierPartner;
 
     public ShipmentDetail(ShipmentItemInfo[] shipmentItemInfo, int length, int height, int breadth, float weight,
                           OrderType orderType, float codValue, String referenceNumber, String invoiceNumber,
                           float invoiceValue, Date invoiceDate, int courierPartner) {
-        shipmentItemInfo_ = shipmentItemInfo;
-        length_ = length;
-        height_ = height;
-        breadth_ = breadth;
-        weight_ = weight;
-        orderType_ = orderType;
-        codValue_ = codValue;
-        referenceNumber_ = referenceNumber;
-        invoiceNumber_ = invoiceNumber;
-        invoiceValue_ = invoiceValue;
-        invoiceDate_ = invoiceDate;
-        courierPartner_ = courierPartner;
+        this.shipmentItemInfo = shipmentItemInfo;
+        this.length = length;
+        this.height = height;
+        this.breadth = breadth;
+        this.weight = weight;
+        this.orderType = orderType;
+        this.codValue = codValue;
+        this.referenceNumber = referenceNumber;
+        this.invoiceNumber = invoiceNumber;
+        this.invoiceValue = invoiceValue;
+        this.invoiceDate = invoiceDate;
+        this.courierPartner = courierPartner;
     }
 
     public ShipmentItemInfo[] getShipmentItemInfo() {
-        return shipmentItemInfo_;
+        return shipmentItemInfo;
     }
 
     public int getLength() {
-        return length_;
+        return length;
     }
 
     public int getHeight() {
-        return height_;
+        return height;
     }
 
     public int getBreadth() {
-        return breadth_;
+        return breadth;
     }
 
     public float getWeight() {
-        return weight_;
+        return weight;
     }
 
     public OrderType getOrderType() {
-        return orderType_;
+        return orderType;
     }
 
     public float getCodValue() {
-        return codValue_;
+        return codValue;
     }
 
     public String getReferenceNumber() {
-        return referenceNumber_;
+        return referenceNumber;
     }
 
     public String getInvoiceNumber() {
-        return invoiceNumber_;
+        return invoiceNumber;
     }
 
     public float getInvoiceValue() {
-        return invoiceValue_;
+        return invoiceValue;
     }
 
     public Date getInvoiceDate() {
-        return invoiceDate_;
+        return invoiceDate;
     }
 
     public int getCourierPartner() {
-        return courierPartner_;
+        return courierPartner;
     }
 }

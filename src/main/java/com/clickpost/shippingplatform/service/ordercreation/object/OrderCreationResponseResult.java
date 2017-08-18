@@ -2,25 +2,25 @@ package com.clickpost.shippingplatform.service.ordercreation.object;
 
 
 public class OrderCreationResponseResult {
-    private final String referenceNumber_;
-    private final String waybill_;
-    private final String label_;
+    private final String referenceNumber;
+    private final String waybill;
+    private final String label;
 
     public OrderCreationResponseResult(String referenceNumber, String waybill, String label) {
-        referenceNumber_ = referenceNumber;
-        waybill_ = waybill;
-        label_ = label;
+        this.referenceNumber = referenceNumber;
+        this.waybill = waybill;
+        this.label = label;
     }
 
     public String getReferenceNumber() {
-        return referenceNumber_;
+        return referenceNumber;
     }
 
     public String getWaybill() {
-        return waybill_;
+        return waybill;
     }
 
     public String getLabel() {
-        return label_;
+        return label;
     }
 }

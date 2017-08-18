@@ -6,71 +6,71 @@ import org.testng.internal.Nullable;
 import java.util.Date;
 
 public class PickupInfo {
-    private final String name_;
-    private final String phone_;
-    private final String address_;
-    private final String pinCode_;
+    private final String name;
+    private final String phone;
+    private final String address;
+    private final String pinCode;
 
-    private final String city_;
-    private final String state_;
-    private final String country_;
+    private final String city;
+    private final String state;
+    private final String country;
 
     @Nullable
-    private final String email_;
-    private final String tin_;
-    private final Date pickupTime_;
+    private final String email;
+    private final String tin;
+    private final Date pickupTime;
 
     public PickupInfo(String name, String phone, String address, String pinCode, String city, String state,
                       String country, String email, String tin, Date pickupTime) {
-        name_ = name;
-        phone_ = phone;
-        address_ = address;
-        pinCode_ = pinCode;
-        city_ = city;
-        state_ = state;
-        country_ = country;
-        email_ = email;
-        tin_ = tin;
-        pickupTime_ = pickupTime;
+        this.name = name;
+        this.phone = phone;
+        this.address = address;
+        this.pinCode = pinCode;
+        this.city = city;
+        this.state = state;
+        this.country = country;
+        this.email = email;
+        this.tin = tin;
+        this.pickupTime = pickupTime;
     }
 
     public String getName() {
-        return name_;
+        return name;
     }
 
     public String getPhone() {
-        return phone_;
+        return phone;
     }
 
     public String getAddress() {
-        return address_;
+        return address;
     }
 
     public String getPinCode() {
-        return pinCode_;
+        return pinCode;
     }
 
     public String getCity() {
-        return city_;
+        return city;
     }
 
     public String getState() {
-        return state_;
+        return state;
     }
 
     public String getCountry() {
-        return country_;
+        return country;
     }
 
     public String getEmail() {
-        return email_;
+        return email;
     }
 
     public String getTin() {
-        return tin_;
+        return tin;
     }
 
     public Date getPickupTime() {
-        return pickupTime_;
+        return pickupTime;
     }
 }

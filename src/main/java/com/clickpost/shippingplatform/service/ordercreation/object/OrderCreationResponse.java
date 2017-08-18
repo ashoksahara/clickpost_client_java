@@ -4,21 +4,21 @@ package com.clickpost.shippingplatform.service.ordercreation.object;
 import org.testng.internal.Nullable;
 
 public class OrderCreationResponse {
-    private final OrderCreationResponseMeta orderCreationResponseMeta_;
+    private final OrderCreationResponseMeta orderCreationResponseMeta;
 
     @Nullable
-    private final OrderCreationResponseResult orderCreationResponseResult_;
+    private final OrderCreationResponseResult orderCreationResponseResult;
 
     public OrderCreationResponse(OrderCreationResponseMeta orderCreationResponseMeta, OrderCreationResponseResult orderCreationResponseResult) {
-        orderCreationResponseMeta_ = orderCreationResponseMeta;
-        orderCreationResponseResult_ = orderCreationResponseResult;
+        this.orderCreationResponseMeta = orderCreationResponseMeta;
+        this.orderCreationResponseResult = orderCreationResponseResult;
     }
 
     public OrderCreationResponseMeta getOrderCreationResponseMeta() {
-        return orderCreationResponseMeta_;
+        return orderCreationResponseMeta;
     }
 
     public OrderCreationResponseResult getOrderCreationResponseResult() {
-        return orderCreationResponseResult_;
+        return orderCreationResponseResult;
     }
 }

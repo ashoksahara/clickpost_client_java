@@ -2,49 +2,49 @@ package com.clickpost.shippingplatform.service.ordercreation.object;
 
 
 public class DropInfo {
-    private final String name_;
-    private final String phone_;
-    private final String address_;
-    private final String pinCode_;
-    private final String city_;
-    private final String state_;
-    private final String country_;
+    private final String name;
+    private final String phone;
+    private final String address;
+    private final String pinCode;
+    private final String city;
+    private final String state;
+    private final String country;
 
     public DropInfo(String name, String phone, String address, String pinCode, String city, String state, String country) {
-        name_ = name;
-        phone_ = phone;
-        city_ = city;
-        state_ = state;
-        pinCode_ = pinCode;
-        country_ = country;
-        address_ = address;
+        this.name = name;
+        this.phone = phone;
+        this.address = address;
+        this.pinCode = pinCode;
+        this.city = city;
+        this.state = state;
+        this.country = country;
     }
 
     public String getName() {
-        return name_;
+        return name;
     }
 
     public String getPhone() {
-        return phone_;
+        return phone;
     }
 
     public String getAddress() {
-        return address_;
+        return address;
     }
 
     public String getPinCode() {
-        return pinCode_;
+        return pinCode;
     }
 
     public String getCity() {
-        return city_;
+        return city;
     }
 
     public String getState() {
-        return state_;
+        return state;
     }
 
     public String getCountry() {
-        return country_;
+        return country;
     }
 }

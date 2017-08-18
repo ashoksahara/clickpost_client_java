@@ -4,40 +4,40 @@ package com.clickpost.shippingplatform.service.ordercreation.object;
 import org.testng.internal.Nullable;
 
 public class ShipmentItemInfo {
-    private final String sku_;
-    private final String description_;
-    private final int quantity_;
-    private final float price_;
+    private final String sku;
+    private final String description;
+    private final int quantity;
+    private final float price;
 
     @Nullable
-    private final ShipmentItemAdditionalInfo shipmentItemAdditionalInfo_;
+    private final ShipmentItemAdditionalInfo shipmentItemAdditionalInfo;
 
-    public ShipmentItemInfo(String sku, String description, int quantity, float price,
-                            ShipmentItemAdditionalInfo shipmentItemAdditionalInfo) {
-        sku_ = sku;
-        description_ = description;
-        quantity_ = quantity;
-        price_ = price;
-        shipmentItemAdditionalInfo_ = shipmentItemAdditionalInfo;
+
+    public ShipmentItemInfo(String sku, String description, int quantity, float price, ShipmentItemAdditionalInfo shipmentItemAdditionalInfo) {
+        this.sku = sku;
+        this.description = description;
+        this.quantity = quantity;
+        this.price = price;
+        this.shipmentItemAdditionalInfo = shipmentItemAdditionalInfo;
     }
 
     public String getSku() {
-        return sku_;
+        return sku;
     }
 
     public String getDescription() {
-        return description_;
+        return description;
     }
 
     public int getQuantity() {
-        return quantity_;
+        return quantity;
     }
 
     public float getPrice() {
-        return price_;
+        return price;
     }
 
     public ShipmentItemAdditionalInfo getShipmentItemAdditionalInfo() {
-        return shipmentItemAdditionalInfo_;
+        return shipmentItemAdditionalInfo;
     }
 }
