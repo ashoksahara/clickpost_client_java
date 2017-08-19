@@ -12,7 +12,7 @@ import java.net.URISyntaxException;
 
 public interface OrderCreationService {
     public OrderCreationResponseResultJson createOrderOnClickPost(OrderCreationV3Json orderCreationObject, String userName, String key)
-            throws ClickPostServerException, OrderCreationException, IOException, URISyntaxException;
+            throws ClickPostServerException, OrderCreationException;
 
     public OrderCreationV3Json buildOrderCreationJsonClassFromOrderCreationObject(OrderCreationObject orderCreationObject);
 }
