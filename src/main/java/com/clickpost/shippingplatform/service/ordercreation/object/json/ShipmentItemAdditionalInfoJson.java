@@ -12,7 +12,7 @@ public class ShipmentItemAdditionalInfoJson {
     @JsonProperty("length")
     private Integer length;
 
-    @JsonProperty("length")
+    @JsonProperty("height")
     private Integer height;
 
     public ShipmentItemAdditionalInfoJson() {

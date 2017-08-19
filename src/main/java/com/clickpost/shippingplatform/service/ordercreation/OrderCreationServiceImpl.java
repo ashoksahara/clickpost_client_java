@@ -5,16 +5,61 @@ import com.clickpost.shippingplatform.service.ordercreation.exception.ClickPostS
 import com.clickpost.shippingplatform.service.ordercreation.exception.OrderCreationException;
 import com.clickpost.shippingplatform.service.ordercreation.object.*;
 import com.clickpost.shippingplatform.service.ordercreation.object.json.*;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.utils.URIBuilder;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URISyntaxException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 
 public class OrderCreationServiceImpl implements OrderCreationService {
+    private PoolingHttpClientConnectionManager connectionManager_;
+    private static final String CLICKPOST_URL = "http://test.clickpost.in/api/v3/create-order/";
+    private static final String CLICKPOST_HOST = "test.clickpost.in";
+    private static final String CLICKPOST_PATH = "api/v3/create-order/";
+    private static final String CLICKPOST_SCHEME = "http";
+    private ObjectMapper objectMapper;
+
+    public OrderCreationServiceImpl() {
+        connectionManager_ = new PoolingHttpClientConnectionManager();
+        this.objectMapper = new ObjectMapper();
+    }
+
     @Override
-    public OrderCreationResponse createOrderOnClickPost(OrderCreationObject orderCreationObject, String userName, String apiKey)
+    public OrderCreationResponseResultJson createOrderOnClickPost(OrderCreationV3Json orderCreationV3Json, String userName, String apiKey)
             throws ClickPostServerException, OrderCreationException {
-        return null;
+        CloseableHttpClient httpClient = HttpClients.custom().setConnectionManager(connectionManager_).build();
+        URIBuilder uriBuilder = new URIBuilder();
+        uriBuilder.setScheme(CLICKPOST_SCHEME).setHost(CLICKPOST_HOST).setPath(CLICKPOST_PATH)
+                .setParameter("username", userName)
+                .setParameter("key", apiKey);
+        HttpPost httpPost;
+        try {
+            httpPost = new HttpPost(uriBuilder.build());
+            System.out.println(uriBuilder.build().getQuery());
+            String jsonString = this.objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(orderCreationV3Json);
+            StringEntity stringEntity = new StringEntity(jsonString);
+            stringEntity.setContentType("application/json");
+            httpPost.setEntity(stringEntity);
+            CloseableHttpResponse response = httpClient.execute(httpPost);
+            System.out.println(response.getStatusLine().getStatusCode());
+            InputStream responseStream = response.getEntity().getContent();
+            return objectMapper.readValue(responseStream
+                    , OrderCreationResponseResultJson.class);
+        } catch (URISyntaxException | IOException e) {
+            e.printStackTrace();
+            throw new OrderCreationException(e.getMessage());
+        }
+
     }
 
     @Override
@@ -71,4 +116,6 @@ public class OrderCreationServiceImpl implements OrderCreationService {
                 shipmentDetail.getReferenceNumber(), shipmentDetail.getInvoiceNumber(), shipmentDetail.getInvoiceValue(), invoiceDate,
                 shipmentDetail.getCourierPartner());
     }
+
+
 }
