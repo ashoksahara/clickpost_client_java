@@ -53,8 +53,12 @@ public class OrderCreationServiceImpl implements OrderCreationService {
             CloseableHttpResponse response = httpClient.execute(httpPost);
             System.out.println(response.getStatusLine().getStatusCode());
             InputStream responseStream = response.getEntity().getContent();
-            return objectMapper.readValue(responseStream
+            OrderCreationResponseResultJson orderCreationResponseResultJson = objectMapper.readValue(responseStream
                     , OrderCreationResponseResultJson.class);
+            if (orderCreationResponseResultJson.getResponseMetaJson().getStatusCode() != 200) {
+                throw new OrderCreationException(orderCreationResponseResultJson.getResponseMetaJson().getMessage());
+            }
+            return orderCreationResponseResultJson;
         } catch (URISyntaxException | IOException e) {
             e.printStackTrace();
             throw new OrderCreationException(e.getMessage());
