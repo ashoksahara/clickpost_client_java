@@ -1,27 +1,36 @@
 package com.clickpost.shippingplatform.service.ordercreation.object.json;
 
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class ReturnInfoJson {
+    @JsonInclude(Include.NON_NULL)
     @JsonProperty("name")
     private String name;
 
+    @JsonInclude(Include.NON_NULL)
     @JsonProperty("phone")
     private String phone;
 
+    @JsonInclude(Include.NON_NULL)
     @JsonProperty("address")
     private String address;
 
+    @JsonInclude(Include.NON_NULL)
     @JsonProperty("pincode")
     private String pinCode;
 
+    @JsonInclude(Include.NON_NULL)
     @JsonProperty("city")
     private String city;
 
+    @JsonInclude(Include.NON_NULL)
     @JsonProperty("state")
     private String state;
 
+    @JsonInclude(Include.NON_NULL)
     @JsonProperty("country")
     private String country;
 
