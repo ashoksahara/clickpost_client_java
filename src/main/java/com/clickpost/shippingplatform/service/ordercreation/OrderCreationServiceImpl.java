@@ -21,7 +21,7 @@ public class OrderCreationServiceImpl implements OrderCreationService {
     public OrderCreationV3Json buildOrderCreationJsonClassFromOrderCreationObject(OrderCreationObject orderCreationObject) {
         return new OrderCreationV3Json(getPickupInfoJsonFromPickupInfo(orderCreationObject.getPickupInfo()),
                 getShipmentDetailJsonFromShipmentDetail(orderCreationObject.getShipmentDetail()),
-                getAdditionalInfoJsonFromAdditionalInfo(orderCreationObject.getAdditionalInfo()),
+                getAdditionalInfoJsonFromAdditionalInfo(orderCreationObject.getAdditionalInfo(), orderCreationObject.getReturnInfo()),
                 getDropInfoJsonFromDropInfo(orderCreationObject.getDropInfo()));
     }
 
@@ -47,10 +47,10 @@ public class OrderCreationServiceImpl implements OrderCreationService {
                 returnInfo.getCity(), returnInfo.getState(), returnInfo.getCountry());
     }
 
-    private AdditionalInfoJson getAdditionalInfoJsonFromAdditionalInfo(AdditionalInfo additionalInfo) {
+    private AdditionalInfoJson getAdditionalInfoJsonFromAdditionalInfo(AdditionalInfo additionalInfo, ReturnInfo returnInfo) {
         return new AdditionalInfoJson(additionalInfo.getDeliveryType().getName(), additionalInfo.getRvpReason(),
                 additionalInfo.isAsync(), additionalInfo.getAwbNumber(), additionalInfo.isLabel(), additionalInfo.getPriority(),
-                getReturnInfoJsonFromReturnInfo(additionalInfo.getReturnInfo()));
+                getReturnInfoJsonFromReturnInfo(returnInfo));
     }
 
     private ShipmentDetailJson getShipmentDetailJsonFromShipmentDetail(ShipmentDetail shipmentDetail) {
