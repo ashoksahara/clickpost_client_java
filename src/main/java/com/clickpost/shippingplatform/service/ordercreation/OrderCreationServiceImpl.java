@@ -22,22 +22,22 @@ import java.util.ArrayList;
 
 
 public class OrderCreationServiceImpl implements OrderCreationService {
-    private PoolingHttpClientConnectionManager connectionManager_;
+    private PoolingHttpClientConnectionManager connectionManager;
+    private ObjectMapper objectMapper;
     private static final String CLICKPOST_URL = "http://test.clickpost.in/api/v3/create-order/";
     private static final String CLICKPOST_HOST = "test.clickpost.in";
     private static final String CLICKPOST_PATH = "api/v3/create-order/";
     private static final String CLICKPOST_SCHEME = "http";
-    private ObjectMapper objectMapper;
 
     public OrderCreationServiceImpl() {
-        connectionManager_ = new PoolingHttpClientConnectionManager();
+        this.connectionManager = new PoolingHttpClientConnectionManager();
         this.objectMapper = new ObjectMapper();
     }
 
     @Override
     public OrderCreationResponseResultJson createOrderOnClickPost(OrderCreationV3Json orderCreationV3Json, String userName, String apiKey)
             throws ClickPostServerException, OrderCreationException {
-        CloseableHttpClient httpClient = HttpClients.custom().setConnectionManager(connectionManager_).build();
+        CloseableHttpClient httpClient = HttpClients.custom().setConnectionManager(this.connectionManager).build();
         URIBuilder uriBuilder = new URIBuilder();
         uriBuilder.setScheme(CLICKPOST_SCHEME).setHost(CLICKPOST_HOST).setPath(CLICKPOST_PATH)
                 .setParameter("username", userName)
@@ -45,7 +45,6 @@ public class OrderCreationServiceImpl implements OrderCreationService {
         HttpPost httpPost;
         try {
             httpPost = new HttpPost(uriBuilder.build());
-            System.out.println(uriBuilder.build().getQuery());
             String jsonString = this.objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(orderCreationV3Json);
             StringEntity stringEntity = new StringEntity(jsonString);
             stringEntity.setContentType("application/json");
