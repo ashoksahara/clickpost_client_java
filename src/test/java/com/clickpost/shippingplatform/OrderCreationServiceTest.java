@@ -2,8 +2,6 @@ package com.clickpost.shippingplatform;
 
 
 import com.clickpost.shippingplatform.service.ordercreation.OrderCreationServiceImpl;
-import com.clickpost.shippingplatform.service.ordercreation.exception.ClickPostServerException;
-import org.mockito.Mockito;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
