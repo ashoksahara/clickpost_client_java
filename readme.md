@@ -14,8 +14,9 @@
  * For more info contact at support@clickpost.in
  
  ### Quickstart
- In order to get API key and choose a region refer to the [documentation](https://docs.postmen.com/overview.html).
+ In order to get API key and choose a region refer to the [documentation](https://www.clickpost.in).
  ``` JAVA
+ In order To Create Order follow the simple steps
  // create OrderCreationObject
  OrderCreationObject orderCreationObject = new OrderCreationObject(<params>)
  // make order creation impl instance 
@@ -48,5 +49,5 @@ How do I get set up?
  
  ### Who do I talk to? ###
  
- * Repo owner or admin
- * Other community or team contact
+ * Contact at support@clickpost.in
+ * Repo owner contact ashok@clickpost.in
