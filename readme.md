@@ -19,11 +19,16 @@
  You need to create order usign OrderCreationObject instance
  Order Creation Object use 5 fields
  
-    1. PickupInfo (Pickup Info Consist all the details required for shipment pickup like pickup address, pickup phone etc)
-    2. ShipmentDetail (Shipment Detail consist all the information regarding the shipment like items, their dimensions, weight etc etc )
-    3. AdditionalInfo (Its an optional object, you can pass null into it. it consist extra information like awbNumber, Delivery Type, Shipping Label need to generated in api or not etc.)
-    4. DropInfo (It Consist all the information for shipment drop like where to deliver, drop name, drop phone nomber etc)
-    5. ReturnInfo (It consist all the information for shipment Return in case shipment gets RTO. like where to return , return name address, phons etc)
+    1. PickupInfo (Pickup Info Consist all the details required for shipment pickup like pickup address, 
+    pickup phone etc)
+    2. ShipmentDetail (Shipment Detail consist all the information regarding the shipment like items,
+     their dimensions, weight etc etc )
+    3. AdditionalInfo (Its an optional object, you can pass null into it. 
+    it consist extra information like awbNumber, Delivery Type, Shipping Label need to generated in api or not etc.)
+    4. DropInfo (It Consist all the information for shipment drop like where to
+     deliver, drop name, drop phone nomber etc)
+    5. ReturnInfo (It consist all the information for shipment Return in case shipment gets RTO. 
+    like where to return , return name address, phons etc)
     6. GstInfo (It consist all the information regarding the Gst)
  
  ``` JAVA
