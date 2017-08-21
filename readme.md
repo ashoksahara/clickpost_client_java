@@ -26,7 +26,7 @@
     
      } catch (ClickPostServerException e) {
          e.printStackTrace();
-     }catch(ClickPostServerException e){
+     }catch(OrderCreationException e){
        e.printStackTrace(); 
      }
  ```
