@@ -11,7 +11,7 @@ import com.clickpost.shippingplatform.service.ordercreation.object.json.OrderCre
 public interface OrderCreationService {
     public OrderCreationResponse createOrderOnClickPost(OrderCreationObject orderCreationObject, String userName,
                                                         String key, ClickPostConfig clickPostConfig)
-            throws ClickPostServerException, OrderCreationException;
+            throws ClickPostServerException, ClickPostServerException;
 
     public OrderCreationV3Json buildOrderCreationJsonClassFromOrderCreationObject(OrderCreationObject orderCreationObject);
 }
