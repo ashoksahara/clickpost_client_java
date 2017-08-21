@@ -24,10 +24,6 @@ import java.util.ArrayList;
 public class OrderCreationServiceImpl implements OrderCreationService {
     private PoolingHttpClientConnectionManager connectionManager;
     private ObjectMapper objectMapper;
-    private static final String CLICKPOST_URL = "http://test.clickpost.in/api/v3/create-order/";
-    private static final String CLICKPOST_HOST = "test.clickpost.in";
-    private static final String CLICKPOST_PATH = "api/v3/create-order/";
-    private static final String CLICKPOST_SCHEME = "http";
 
     public OrderCreationServiceImpl() {
         this.connectionManager = new PoolingHttpClientConnectionManager();
@@ -35,11 +31,12 @@ public class OrderCreationServiceImpl implements OrderCreationService {
     }
 
     @Override
-    public OrderCreationResponseResultJson createOrderOnClickPost(OrderCreationV3Json orderCreationV3Json, String userName, String apiKey)
+    public OrderCreationResponseResultJson createOrderOnClickPost(OrderCreationV3Json orderCreationV3Json, String userName,
+                                                                  String apiKey, ClickPostConfig clickPostConfig)
             throws ClickPostServerException, OrderCreationException {
         CloseableHttpClient httpClient = HttpClients.custom().setConnectionManager(this.connectionManager).build();
         URIBuilder uriBuilder = new URIBuilder();
-        uriBuilder.setScheme(CLICKPOST_SCHEME).setHost(CLICKPOST_HOST).setPath(CLICKPOST_PATH)
+        uriBuilder.setScheme(clickPostConfig.getScheme()).setHost(clickPostConfig.getHost()).setPath(clickPostConfig.getPath())
                 .setParameter("username", userName)
                 .setParameter("key", apiKey);
         HttpPost httpPost;
@@ -129,6 +126,6 @@ public class OrderCreationServiceImpl implements OrderCreationService {
                 gstInfo.getEwaybillSerialNumber(), gstInfo.getSgstAmount(), gstInfo.getCgstAmount(), gstInfo.getIgstAmount(), gstInfo.getGstTaxBase(),
                 gstInfo.getGstDiscount(), gstInfo.getSgstTaxRate(), gstInfo.getCgstTaxRate(), gstInfo.getIgstTaxRate(), gstInfo.getGstTotalTax());
     }
-
+    
 
 }
