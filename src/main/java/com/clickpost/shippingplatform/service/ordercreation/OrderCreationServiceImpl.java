@@ -31,8 +31,8 @@ public class OrderCreationServiceImpl implements OrderCreationService {
     }
 
     @Override
-    public OrderCreationResponseResultJson createOrderOnClickPost(OrderCreationV3Json orderCreationV3Json, String userName,
-                                                                  String apiKey, ClickPostConfig clickPostConfig)
+    public OrderCreationResponse createOrderOnClickPost(OrderCreationObject orderCreationObject, String userName,
+                                                        String apiKey, ClickPostConfig clickPostConfig)
             throws ClickPostServerException, OrderCreationException {
         CloseableHttpClient httpClient = HttpClients.custom().setConnectionManager(this.connectionManager).build();
         URIBuilder uriBuilder = new URIBuilder();
@@ -42,6 +42,7 @@ public class OrderCreationServiceImpl implements OrderCreationService {
         HttpPost httpPost;
         try {
             httpPost = new HttpPost(uriBuilder.build());
+            OrderCreationV3Json orderCreationV3Json = buildOrderCreationJsonClassFromOrderCreationObject(orderCreationObject);
             String jsonString = this.objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(orderCreationV3Json);
             StringEntity stringEntity = new StringEntity(jsonString);
             stringEntity.setContentType("application/json");
@@ -54,7 +55,7 @@ public class OrderCreationServiceImpl implements OrderCreationService {
             if (orderCreationResponseResultJson.getResponseMetaJson().getStatusCode() != 200) {
                 throw new OrderCreationException(orderCreationResponseResultJson.getResponseMetaJson().getMessage());
             }
-            return orderCreationResponseResultJson;
+            return buildOrderCreationResponseFromJson(orderCreationResponseResultJson);
         } catch (URISyntaxException | IOException e) {
             e.printStackTrace();
             throw new OrderCreationException(e.getMessage());
@@ -77,6 +78,23 @@ public class OrderCreationServiceImpl implements OrderCreationService {
                 pickupInfo.getPinCode(), pickupInfo.getCity(), pickupInfo.getState(), pickupInfo.getCountry(), pickupInfo.getEmail(),
                 pickupInfo.getTin(), pickupTime);
 
+    }
+
+
+    private OrderCreationResponse buildOrderCreationResponseFromJson(OrderCreationResponseResultJson orderCreationResponseResultJson) {
+        OrderCreationResponseMeta orderCreationResponseMeta = null;
+        OrderCreationResponseResult orderCreationResponseResult = null;
+        if (orderCreationResponseResultJson.getResponseMetaJson() != null) {
+            orderCreationResponseMeta = new OrderCreationResponseMeta(orderCreationResponseResultJson.getResponseMetaJson().getStatusCode(),
+                    orderCreationResponseResultJson.getResponseMetaJson().getMessage(),
+                    orderCreationResponseResultJson.getResponseMetaJson().getSuccess());
+        }
+        if (orderCreationResponseResultJson.getResponseResultBodyJson() != null) {
+            orderCreationResponseResult = new OrderCreationResponseResult(orderCreationResponseResultJson.getResponseResultBodyJson().getReferenceNumber(),
+                    orderCreationResponseResultJson.getResponseResultBodyJson().getWaybill(),
+                    orderCreationResponseResultJson.getResponseResultBodyJson().getLabel());
+        }
+        return new OrderCreationResponse(orderCreationResponseMeta, orderCreationResponseResult);
     }
 
     private DropInfoJson getDropInfoJsonFromDropInfo(DropInfo dropInfo) {
@@ -126,6 +144,6 @@ public class OrderCreationServiceImpl implements OrderCreationService {
                 gstInfo.getEwaybillSerialNumber(), gstInfo.getSgstAmount(), gstInfo.getCgstAmount(), gstInfo.getIgstAmount(), gstInfo.getGstTaxBase(),
                 gstInfo.getGstDiscount(), gstInfo.getSgstTaxRate(), gstInfo.getCgstTaxRate(), gstInfo.getIgstTaxRate(), gstInfo.getGstTotalTax());
     }
-    
+
 
 }
