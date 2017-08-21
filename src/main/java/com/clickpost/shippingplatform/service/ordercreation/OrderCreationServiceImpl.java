@@ -121,6 +121,9 @@ public class OrderCreationServiceImpl implements OrderCreationService {
     }
 
     private GstInfoJson getGstInfoJsonFromGstInfo(GstInfo gstInfo) {
+        if (gstInfo == null) {
+            return null;
+        }
         return new GstInfoJson(gstInfo.getSellerGstin(), gstInfo.getEnterpriseGstin(), gstInfo.getConsigneeGstin(), gstInfo.getHsnCode(),
                 gstInfo.getInvoiceReference(), gstInfo.getSellerRegisteredUnderGst(), gstInfo.getTaxableValue(), gstInfo.getPlaceOfSupply(),
                 gstInfo.getEwaybillSerialNumber(), gstInfo.getSgstAmount(), gstInfo.getCgstAmount(), gstInfo.getIgstAmount(), gstInfo.getGstTaxBase(),
