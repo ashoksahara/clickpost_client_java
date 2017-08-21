@@ -11,12 +11,17 @@ public class OrderCreationObject {
     @Nullable
     private final ReturnInfo returnInfo;
 
-    public OrderCreationObject(PickupInfo pickupInfo, ShipmentDetail shipmentDetail, AdditionalInfo additionalInfo, DropInfo dropInfo, ReturnInfo returnInfo) {
+    @Nullable
+    private final GstInfo gstInfo;
+
+    public OrderCreationObject(PickupInfo pickupInfo, ShipmentDetail shipmentDetail, AdditionalInfo additionalInfo, DropInfo dropInfo,
+                               ReturnInfo returnInfo, GstInfo gstInfo) {
         this.pickupInfo = pickupInfo;
         this.shipmentDetail = shipmentDetail;
         this.additionalInfo = additionalInfo;
         this.dropInfo = dropInfo;
         this.returnInfo = returnInfo;
+        this.gstInfo = gstInfo;
     }
 
     public PickupInfo getPickupInfo() {
@@ -37,5 +42,9 @@ public class OrderCreationObject {
 
     public ReturnInfo getReturnInfo() {
         return returnInfo;
+    }
+
+    public GstInfo getGstInfo() {
+        return gstInfo;
     }
 }

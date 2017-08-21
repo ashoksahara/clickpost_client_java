@@ -70,7 +70,7 @@ public class OrderCreationServiceImpl implements OrderCreationService {
         return new OrderCreationV3Json(getPickupInfoJsonFromPickupInfo(orderCreationObject.getPickupInfo()),
                 getShipmentDetailJsonFromShipmentDetail(orderCreationObject.getShipmentDetail()),
                 getAdditionalInfoJsonFromAdditionalInfo(orderCreationObject.getAdditionalInfo(), orderCreationObject.getReturnInfo()),
-                getDropInfoJsonFromDropInfo(orderCreationObject.getDropInfo()));
+                getDropInfoJsonFromDropInfo(orderCreationObject.getDropInfo()), getGstInfoJsonFromGstInfo(orderCreationObject.getGstInfo()));
     }
 
     private PickupInfoJson getPickupInfoJsonFromPickupInfo(PickupInfo pickupInfo) {
@@ -118,6 +118,13 @@ public class OrderCreationServiceImpl implements OrderCreationService {
                 shipmentDetail.getBreadth(), shipmentDetail.getWeight(), shipmentDetail.getInvoiceNumber(), shipmentDetail.getCodValue(),
                 shipmentDetail.getReferenceNumber(), shipmentDetail.getInvoiceNumber(), shipmentDetail.getInvoiceValue(), invoiceDate,
                 shipmentDetail.getCourierPartner());
+    }
+
+    private GstInfoJson getGstInfoJsonFromGstInfo(GstInfo gstInfo) {
+        return new GstInfoJson(gstInfo.getSellerGstin(), gstInfo.getEnterpriseGstin(), gstInfo.getConsigneeGstin(), gstInfo.getHsnCode(),
+                gstInfo.getInvoiceReference(), gstInfo.getSellerRegisteredUnderGst(), gstInfo.getTaxableValue(), gstInfo.getPlaceOfSupply(),
+                gstInfo.getEwaybillSerialNumber(), gstInfo.getSgstAmount(), gstInfo.getCgstAmount(), gstInfo.getIgstAmount(), gstInfo.getGstTaxBase(),
+                gstInfo.getGstDiscount(), gstInfo.getSgstTaxRate(), gstInfo.getCgstTaxRate(), gstInfo.getIgstTaxRate(), gstInfo.getGstTotalTax());
     }
 
 
