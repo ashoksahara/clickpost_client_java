@@ -15,8 +15,8 @@
  
  ### Quickstart
  In order to get API key and choose a region refer to the [documentation](https://www.clickpost.in).
- ``` JAVA
  In order To Create Order follow the simple steps
+ ``` JAVA
  // create OrderCreationObject
  OrderCreationObject orderCreationObject = new OrderCreationObject(<params>)
  // make order creation impl instance 
@@ -34,18 +34,10 @@
  
 How do I get set up?
  
- * Summary of set up
- * Configuration
- * Dependencies
- * Database configuration
- * How to run tests
- * Deployment instructions
- 
- ### Contribution guidelines ###
- 
- * Writing tests
- * Code review
- * Other guidelines
+ * get the library as jar from link https://drive.google.com/file/d/0B9lRyvrU89MlVnRidElzc1BjSm8/view?usp=sharing
+ * import the jar as library in your project
+ * You are ready to use, all dependencies are bundled in the jar file
+
  
  ### Who do I talk to? ###
  
