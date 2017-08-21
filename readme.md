@@ -1,9 +1,9 @@
- # Clickpost Java Client #
+ Clickpost Java Client:
  This a java client for integrating clickpost in your system for order creation with courier companies,
  real time shipment tracking.
  You can contribute to the repo. Its available as open source.
  
- ### What is this repository for? ###
+
  
  * Quick summary
     1. Integrate Order Creation, Tracking of multiple courier comapanies in your system
@@ -11,10 +11,9 @@
 
  * Version
     1.0.0
- * More Info
-    for more info contact at support@clickpost.in
+ * for more info contact at support@clickpost.in
  
- ### How do I get set up? ###
+How do I get set up?
  
  * Summary of set up
  * Configuration
