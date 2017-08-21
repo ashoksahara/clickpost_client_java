@@ -18,6 +18,7 @@
  In order To Create Order follow the simple steps
  You need to create order usign OrderCreationObject instance
  Order Creation Object use 5 fields
+ 
     1. PickupInfo (Pickup Info Consist all the details required for shipment pickup like pickup address, pickup phone etc)
     2. ShipmentDetail (Shipment Detail consist all the information regarding the shipment like items, their dimensions, weight etc etc )
     3. AdditionalInfo (Its an optional object, you can pass null into it. it consist extra information like awbNumber, Delivery Type, Shipping Label need to generated in api or not etc.)

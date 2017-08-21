@@ -8,6 +8,7 @@ public class OrderCreationObject {
 
     @Nullable
     private final AdditionalInfo additionalInfo;
+    
     private final DropInfo dropInfo;
 
     @Nullable
