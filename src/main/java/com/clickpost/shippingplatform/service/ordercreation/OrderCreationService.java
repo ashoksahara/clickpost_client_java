@@ -6,7 +6,6 @@ import com.clickpost.shippingplatform.service.ordercreation.exception.OrderCreat
 import com.clickpost.shippingplatform.service.ordercreation.object.ClickPostConfig;
 import com.clickpost.shippingplatform.service.ordercreation.object.OrderCreationObject;
 import com.clickpost.shippingplatform.service.ordercreation.object.OrderCreationResponse;
-import com.clickpost.shippingplatform.service.ordercreation.object.json.OrderCreationResponseResultJson;
 import com.clickpost.shippingplatform.service.ordercreation.object.json.OrderCreationV3Json;
 
 public interface OrderCreationService {
