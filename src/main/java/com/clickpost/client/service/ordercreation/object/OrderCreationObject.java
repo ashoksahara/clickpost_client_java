@@ -5,6 +5,8 @@ import org.testng.internal.Nullable;
 public class OrderCreationObject {
     private final PickupInfo pickupInfo;
     private final ShipmentDetail shipmentDetail;
+
+    @Nullable
     private final AdditionalInfo additionalInfo;
     private final DropInfo dropInfo;
 

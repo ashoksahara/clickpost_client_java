@@ -9,7 +9,7 @@ public class DropInfo {
     private final String city;
     private final String state;
     private final String country;
-
+    
     public DropInfo(String name, String phone, String address, String pinCode, String city, String state, String country) {
         this.name = name;
         this.phone = phone;
