@@ -1,6 +1,8 @@
 package com.clickpost.shippingplatform.service.ordercreation.object.json;
 
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class OrderCreationV3Json {
@@ -13,18 +15,24 @@ public class OrderCreationV3Json {
     @JsonProperty("additional")
     private AdditionalInfoJson additionalInfo;
 
+    @JsonInclude(Include.NON_NULL)
     @JsonProperty("drop_info")
     private DropInfoJson dropInfo;
+
+    @JsonInclude(Include.NON_NULL)
+    @JsonProperty("gst_info")
+    private GstInfoJson gstInfoJson;
 
     public OrderCreationV3Json() {
     }
 
     public OrderCreationV3Json(PickupInfoJson pickupInfo, ShipmentDetailJson shipmentDetail, AdditionalInfoJson additionalInfo,
-                               DropInfoJson dropInfo) {
+                               DropInfoJson dropInfo, GstInfoJson gstInfoJson) {
         this.pickupInfo = pickupInfo;
         this.shipmentDetail = shipmentDetail;
         this.additionalInfo = additionalInfo;
         this.dropInfo = dropInfo;
+        this.gstInfoJson = gstInfoJson;
     }
 
     public PickupInfoJson getPickupInfo() {
@@ -41,5 +49,9 @@ public class OrderCreationV3Json {
 
     public DropInfoJson getDropInfo() {
         return dropInfo;
+    }
+
+    public GstInfoJson getGstInfoJson() {
+        return gstInfoJson;
     }
 }

@@ -14,6 +14,14 @@ public enum DeliveryType {
         this.name = name;
     }
 
+    public String getName() {
+        return this.name;
+    }
+
+    public int getOrdinal() {
+        return this.ordinal;
+    }
+
     public static DeliveryType getDeliveryTypeByOrdinal(int ordinal) {
         for (DeliveryType e : DeliveryType.values()) {
             if (e.ordinal == ordinal) {

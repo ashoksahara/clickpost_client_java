@@ -12,7 +12,6 @@ public class ClickPostServerConfigImpl implements ClickPostServerConfig {
     private static final String CONFIGURATIONFILENAME = "clickpost.properties";
     private final ImmutableConfiguration configuration;
 
-
     public ClickPostServerConfigImpl() throws ConfigurationException {
         Parameters params = new Parameters();
         FileBasedConfigurationBuilder<FileBasedConfiguration> builder =

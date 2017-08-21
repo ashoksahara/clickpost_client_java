@@ -22,18 +22,15 @@ public class AdditionalInfo {
     @Nullable
     private final String priority;
 
-    @Nullable
-    private final ReturnInfo returnInfo;
 
     public AdditionalInfo(DeliveryType deliveryType, String rvpReason, boolean async, String awbNumber, boolean label,
-                          String priority, ReturnInfo returnInfo) {
+                          String priority) {
         this.deliveryType = deliveryType;
         this.rvpReason = rvpReason;
         this.async = async;
         this.awbNumber = awbNumber;
         this.label = label;
         this.priority = priority;
-        this.returnInfo = returnInfo;
     }
 
     public DeliveryType getDeliveryType() {
@@ -60,7 +57,4 @@ public class AdditionalInfo {
         return priority;
     }
 
-    public ReturnInfo getReturnInfo() {
-        return returnInfo;
-    }
 }
