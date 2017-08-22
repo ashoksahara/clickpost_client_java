@@ -34,8 +34,8 @@
   Classes Used in Order Creation Object  
   
     1. Addition Info Class (all fileds are optional, you can pass null or you can pass AdditionalInfo As null object)
-        a. DeliveryType == For Prepaid order --> DeliveryType.PREPAID 
-                           FOR COD Order --> DeliveryType.COD
+        a. DeliveryType == For Forward order --> DeliveryType.FORWARD 
+                           FOR Reverse Order --> DeliveryType.REVERSE
         b. rvpReason == If the Shipment is reverse pickup than this is reason of Rvp
         c. async == If you want to create asynchronously, than this field would be true otherwise false. In Async order Creation
             You will get notification when order will be created successfully on courier partner.
