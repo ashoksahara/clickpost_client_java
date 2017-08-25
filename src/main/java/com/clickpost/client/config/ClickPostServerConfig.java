@@ -2,7 +2,7 @@ package com.clickpost.client.config;
 
 
 public interface ClickPostServerConfig {
-    public String getOrderCreationUrl();
+    String getOrderCreationUrl();
 
-    public String getApiKey();
+    String getApiKey();
 }

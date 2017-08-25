@@ -1,8 +1,8 @@
-package com.clickpost.client.service.ordercreation.object.json;
+package com.clickpost.client.service.ordercreation.object.v3Json;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class ShipmentItemAdditionalInfoJson {
+public class ShipmentItemAdditionalInfoV3Json {
     @JsonProperty("weight")
     private Integer weight;
 
@@ -15,10 +15,10 @@ public class ShipmentItemAdditionalInfoJson {
     @JsonProperty("height")
     private Integer height;
 
-    public ShipmentItemAdditionalInfoJson() {
+    public ShipmentItemAdditionalInfoV3Json() {
     }
 
-    public ShipmentItemAdditionalInfoJson(Integer weight, Integer breadth, Integer length, Integer height) {
+    public ShipmentItemAdditionalInfoV3Json(Integer weight, Integer breadth, Integer length, Integer height) {
         this.weight = weight;
         this.breadth = breadth;
         this.length = length;

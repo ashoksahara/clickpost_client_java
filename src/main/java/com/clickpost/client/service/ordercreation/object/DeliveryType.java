@@ -9,7 +9,7 @@ public enum DeliveryType {
     private String name;
 
 
-    private DeliveryType(int ordinal, String name) {
+    DeliveryType(int ordinal, String name) {
         this.ordinal = ordinal;
         this.name = name;
     }

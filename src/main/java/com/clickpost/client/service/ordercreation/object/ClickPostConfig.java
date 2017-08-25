@@ -8,7 +8,7 @@ public enum ClickPostConfig {
     private String host;
     private String path;
 
-    private ClickPostConfig(String scheme, String host, String path) {
+    ClickPostConfig(String scheme, String host, String path) {
         this.scheme = scheme;
         this.host = host;
         this.path = path;

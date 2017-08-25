@@ -8,7 +8,7 @@ public enum OrderType {
     private int ordinal;
     private String name;
 
-    private OrderType(int ordinal, String name) {
+    OrderType(int ordinal, String name) {
         this.ordinal = ordinal;
         this.name = name;
     }

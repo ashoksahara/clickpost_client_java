@@ -1,4 +1,4 @@
-package com.clickpost.client.service.ordercreation.object.json;
+package com.clickpost.client.service.ordercreation.object.v3Json;
 
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -6,9 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.ArrayList;
 
 
-public class ShipmentDetailJson {
+public class ShipmentDetailV3Json {
     @JsonProperty("items")
-    private ArrayList<ShipmentItemInfoJson> shipmentItemInfo;
+    private ArrayList<ShipmentItemInfoV3Json> shipmentItemInfo;
 
     @JsonProperty("length")
     private Integer length;
@@ -43,12 +43,12 @@ public class ShipmentDetailJson {
     @JsonProperty("courier_partner")
     private Integer courierPartner;
 
-    public ShipmentDetailJson() {
+    public ShipmentDetailV3Json() {
     }
 
-    public ShipmentDetailJson(ArrayList<ShipmentItemInfoJson> shipmentItemInfo, Integer length, Integer height, Integer breadth,
-                              Float weight, String orderType, Float codValue, String referenceNumber, String invoiceNumber,
-                              Float invoiceValue, String invoiceDate, Integer courierPartner) {
+    public ShipmentDetailV3Json(ArrayList<ShipmentItemInfoV3Json> shipmentItemInfo, Integer length, Integer height, Integer breadth,
+                                Float weight, String orderType, Float codValue, String referenceNumber, String invoiceNumber,
+                                Float invoiceValue, String invoiceDate, Integer courierPartner) {
         this.shipmentItemInfo = shipmentItemInfo;
         this.length = length;
         this.height = height;
@@ -63,7 +63,7 @@ public class ShipmentDetailJson {
         this.courierPartner = courierPartner;
     }
 
-    public ArrayList<ShipmentItemInfoJson> getShipmentItemInfo() {
+    public ArrayList<ShipmentItemInfoV3Json> getShipmentItemInfo() {
         return shipmentItemInfo;
     }
 
