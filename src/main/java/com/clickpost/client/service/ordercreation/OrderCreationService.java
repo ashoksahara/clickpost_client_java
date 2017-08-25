@@ -6,12 +6,12 @@ import com.clickpost.client.service.ordercreation.exception.OrderCreationExcepti
 import com.clickpost.client.service.ordercreation.object.ClickPostConfig;
 import com.clickpost.client.service.ordercreation.object.OrderCreationObject;
 import com.clickpost.client.service.ordercreation.object.OrderCreationResponse;
-import com.clickpost.client.service.ordercreation.object.json.OrderCreationV3Json;
+import com.clickpost.client.service.ordercreation.object.v3Json.OrderCreationV3Json;
 
 public interface OrderCreationService {
-    public OrderCreationResponse createOrderOnClickPost(OrderCreationObject orderCreationObject, String userName,
-                                                        String key, ClickPostConfig clickPostConfig)
+    OrderCreationResponse createOrderOnClickPost(OrderCreationObject orderCreationObject, String userName,
+                                                 String key, ClickPostConfig clickPostConfig)
             throws ClickPostServerException, OrderCreationException;
 
-    public OrderCreationV3Json buildOrderCreationJsonClassFromOrderCreationObject(OrderCreationObject orderCreationObject);
+    OrderCreationV3Json buildOrderCreationV3JsonObject(OrderCreationObject orderCreationObject);
 }

@@ -1,11 +1,11 @@
-package com.clickpost.client.service.ordercreation.object.json;
+package com.clickpost.client.service.ordercreation.object.v3Json;
 
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class GstInfoJson {
+public class GstInfoV3Json {
     @JsonInclude(Include.NON_NULL)
     @JsonProperty("seller_gstin")
     private String sellerGstin;
@@ -78,14 +78,14 @@ public class GstInfoJson {
     @JsonProperty("gst_total_tax")
     private Float gstTotalTax;
 
-    public GstInfoJson() {
+    public GstInfoV3Json() {
     }
 
-    public GstInfoJson(String sellerGstin, String enterpriseGstin, String consigneeGstin, String hsnCode, String invoiceReference,
-                       Boolean isSellerRegisteredUnderGst, Float taxableValue, String placeOfSupply,
-                       String ewaybillSerialNumber, Float sgstAmount, Float cgstAmount, Float igstAmount,
-                       Float gstTaxBase, Float gstDiscount, Float sgstTaxRate, Float cgstTaxRate, Float igstTaxRate,
-                       Float gstTotalTax) {
+    public GstInfoV3Json(String sellerGstin, String enterpriseGstin, String consigneeGstin, String hsnCode, String invoiceReference,
+                         Boolean isSellerRegisteredUnderGst, Float taxableValue, String placeOfSupply,
+                         String ewaybillSerialNumber, Float sgstAmount, Float cgstAmount, Float igstAmount,
+                         Float gstTaxBase, Float gstDiscount, Float sgstTaxRate, Float cgstTaxRate, Float igstTaxRate,
+                         Float gstTotalTax) {
         this.sellerGstin = sellerGstin;
         this.enterpriseGstin = enterpriseGstin;
         this.consigneeGstin = consigneeGstin;

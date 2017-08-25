@@ -9,7 +9,7 @@ import org.apache.commons.configuration2.io.ClasspathLocationStrategy;
 
 public class ClickPostServerConfigImpl implements ClickPostServerConfig {
 
-    private static final String CONFIGURATIONFILENAME = "clickpost.properties";
+    private static final String CONFIG_FILE_NAME = "clickpost.properties";
     private final ImmutableConfiguration configuration;
 
     public ClickPostServerConfigImpl() throws ConfigurationException {
@@ -18,7 +18,7 @@ public class ClickPostServerConfigImpl implements ClickPostServerConfig {
                 new FileBasedConfigurationBuilder<FileBasedConfiguration>(PropertiesConfiguration.class)
                         .configure(params.properties()
                                 .setLocationStrategy(new ClasspathLocationStrategy())
-                                .setFileName(CONFIGURATIONFILENAME));
+                                .setFileName(CONFIG_FILE_NAME));
         Configuration configuration = builder.getConfiguration();
         this.configuration = ConfigurationUtils.unmodifiableConfiguration(configuration);
     }

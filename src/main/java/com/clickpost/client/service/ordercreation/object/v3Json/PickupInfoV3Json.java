@@ -1,10 +1,10 @@
-package com.clickpost.client.service.ordercreation.object.json;
+package com.clickpost.client.service.ordercreation.object.v3Json;
 
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 
-public class PickupInfoJson {
+public class PickupInfoV3Json {
     @JsonProperty("pickup_name")
     private String name;
 
@@ -35,11 +35,11 @@ public class PickupInfoJson {
     @JsonProperty("pickup_time")
     private String pickupTime;
 
-    public PickupInfoJson() {
+    public PickupInfoV3Json() {
     }
 
-    public PickupInfoJson(String name, String phone, String address, String pinCode, String city, String state,
-                          String country, String email, String tin, String pickupTime) {
+    public PickupInfoV3Json(String name, String phone, String address, String pinCode, String city, String state,
+                            String country, String email, String tin, String pickupTime) {
         this.name = name;
         this.phone = phone;
         this.address = address;

@@ -1,9 +1,9 @@
-package com.clickpost.client.service.ordercreation.object.json;
+package com.clickpost.client.service.ordercreation.object.v3Json;
 
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class ShipmentItemInfoJson {
+public class ShipmentItemInfoV3Json {
     @JsonProperty("sku")
     private String sku;
 
@@ -17,12 +17,12 @@ public class ShipmentItemInfoJson {
     private float price;
 
     @JsonProperty("additional")
-    private ShipmentItemAdditionalInfoJson shipmentItemAdditionalInfo;
+    private ShipmentItemAdditionalInfoV3Json shipmentItemAdditionalInfo;
 
-    public ShipmentItemInfoJson() {
+    public ShipmentItemInfoV3Json() {
     }
 
-    public ShipmentItemInfoJson(String sku, String description, int quantity, float price, ShipmentItemAdditionalInfoJson shipmentItemAdditionalInfo) {
+    public ShipmentItemInfoV3Json(String sku, String description, int quantity, float price, ShipmentItemAdditionalInfoV3Json shipmentItemAdditionalInfo) {
         this.sku = sku;
         this.description = description;
         this.quantity = quantity;
@@ -46,7 +46,7 @@ public class ShipmentItemInfoJson {
         return price;
     }
 
-    public ShipmentItemAdditionalInfoJson getShipmentItemAdditionalInfo() {
+    public ShipmentItemAdditionalInfoV3Json getShipmentItemAdditionalInfo() {
         return shipmentItemAdditionalInfo;
     }
 }

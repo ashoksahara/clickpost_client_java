@@ -1,4 +1,4 @@
-package com.clickpost.client.service.ordercreation.object.json;
+package com.clickpost.client.service.ordercreation.object.v3Json;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;

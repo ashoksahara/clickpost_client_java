@@ -1,43 +1,34 @@
-package com.clickpost.client.service.ordercreation.object.json;
+package com.clickpost.client.service.ordercreation.object.v3Json;
 
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class ReturnInfoJson {
-    @JsonInclude(Include.NON_NULL)
-    @JsonProperty("name")
+public class DropInfoV3Json {
+    @JsonProperty("drop_name")
     private String name;
 
-    @JsonInclude(Include.NON_NULL)
-    @JsonProperty("phone")
+    @JsonProperty("drop_phone")
     private String phone;
 
-    @JsonInclude(Include.NON_NULL)
-    @JsonProperty("address")
+    @JsonProperty("drop_address")
     private String address;
 
-    @JsonInclude(Include.NON_NULL)
-    @JsonProperty("pincode")
+    @JsonProperty("drop_pincode")
     private String pinCode;
 
-    @JsonInclude(Include.NON_NULL)
-    @JsonProperty("city")
+    @JsonProperty("drop_city")
     private String city;
 
-    @JsonInclude(Include.NON_NULL)
-    @JsonProperty("state")
+    @JsonProperty("drop_state")
     private String state;
 
-    @JsonInclude(Include.NON_NULL)
-    @JsonProperty("country")
+    @JsonProperty("drop_country")
     private String country;
 
-    public ReturnInfoJson() {
+    public DropInfoV3Json() {
     }
 
-    public ReturnInfoJson(String name, String phone, String address, String pinCode, String city, String state, String country) {
+    public DropInfoV3Json(String name, String phone, String address, String pinCode, String city, String state, String country) {
         this.name = name;
         this.phone = phone;
         this.address = address;

@@ -1,11 +1,11 @@
-package com.clickpost.client.service.ordercreation.object.json;
+package com.clickpost.client.service.ordercreation.object.v3Json;
 
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class AdditionalInfoJson {
+public class AdditionalInfoV3Json {
     @JsonInclude(Include.NON_NULL)
     @JsonProperty("delivery_type")
     private String deliveryType;
@@ -32,20 +32,20 @@ public class AdditionalInfoJson {
 
     @JsonProperty("return_info")
     @JsonInclude(Include.NON_NULL)
-    private ReturnInfoJson returnInfoJson;
+    private ReturnInfoV3Json returnInfoV3Json;
 
-    public AdditionalInfoJson() {
+    public AdditionalInfoV3Json() {
     }
 
-    public AdditionalInfoJson(String deliveryType, String rvpReason, Boolean async, String awbNumber,
-                              Boolean label, String priority, ReturnInfoJson returnIInfoJson) {
+    public AdditionalInfoV3Json(String deliveryType, String rvpReason, Boolean async, String awbNumber,
+                                Boolean label, String priority, ReturnInfoV3Json returnIInfoJson) {
         this.deliveryType = deliveryType;
         this.rvpReason = rvpReason;
         this.async = async;
         this.awbNumber = awbNumber;
         this.label = label;
         this.priority = priority;
-        this.returnInfoJson = returnIInfoJson;
+        this.returnInfoV3Json = returnIInfoJson;
     }
 
     public String getDeliveryType() {
@@ -72,8 +72,8 @@ public class AdditionalInfoJson {
         return priority;
     }
 
-    public ReturnInfoJson getReturnIInfoJson() {
-        return returnInfoJson;
+    public ReturnInfoV3Json getReturnIInfoJson() {
+        return returnInfoV3Json;
     }
 
 
