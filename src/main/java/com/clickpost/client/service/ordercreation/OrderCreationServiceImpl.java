@@ -45,7 +45,7 @@ public class OrderCreationServiceImpl implements OrderCreationService {
             OrderCreationV3Json orderCreationV3Json = buildOrderCreationV3JsonObject(orderCreationObject);
             String jsonString = this.objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(orderCreationV3Json);
             StringEntity stringEntity = new StringEntity(jsonString);
-            stringEntity.setContentType("application/v3Json");
+            stringEntity.setContentType("application/json");
             httpPost.setEntity(stringEntity);
             CloseableHttpResponse response = httpClient.execute(httpPost);
             System.out.println(response.getStatusLine().getStatusCode());
