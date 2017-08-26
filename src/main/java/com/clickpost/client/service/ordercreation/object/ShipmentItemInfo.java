@@ -13,12 +13,12 @@ public class ShipmentItemInfo {
     private final ShipmentItemAdditionalInfo shipmentItemAdditionalInfo;
 
 
-    public ShipmentItemInfo(String sku, String description, int quantity, float price, ShipmentItemAdditionalInfo shipmentItemAdditionalInfo) {
-        this.sku = sku;
-        this.description = description;
-        this.quantity = quantity;
-        this.price = price;
-        this.shipmentItemAdditionalInfo = shipmentItemAdditionalInfo;
+    private ShipmentItemInfo(ShipmentItemInfoBuilder shipmentItemInfoBuilder) {
+        this.sku = shipmentItemInfoBuilder.sku;
+        this.description = shipmentItemInfoBuilder.description;
+        this.quantity = shipmentItemInfoBuilder.quantity;
+        this.price = shipmentItemInfoBuilder.price;
+        this.shipmentItemAdditionalInfo = shipmentItemInfoBuilder.shipmentItemAdditionalInfo;
     }
 
     public String getSku() {
@@ -39,5 +39,29 @@ public class ShipmentItemInfo {
 
     public ShipmentItemAdditionalInfo getShipmentItemAdditionalInfo() {
         return shipmentItemAdditionalInfo;
+    }
+
+    public static class ShipmentItemInfoBuilder {
+        private final String sku;
+        private final String description;
+        private final int quantity;
+        private final float price;
+
+        private ShipmentItemAdditionalInfo shipmentItemAdditionalInfo;
+
+        public ShipmentItemInfoBuilder(String sku, String description, int quantity, float price) {
+            this.sku = sku;
+            this.description = description;
+            this.quantity = quantity;
+            this.price = price;
+        }
+
+        public void setShipmentItemAdditionalInfo(ShipmentItemAdditionalInfo shipmentItemAdditionalInfo) {
+            this.shipmentItemAdditionalInfo = shipmentItemAdditionalInfo;
+        }
+
+        public ShipmentItemInfo build() {
+            return new ShipmentItemInfo(this);
+        }
     }
 }
