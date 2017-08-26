@@ -20,18 +20,17 @@ public class PickupInfo {
     private final String tin;
     private final Date pickupTime;
 
-    public PickupInfo(String name, String phone, String address, String pinCode, String city, String state,
-                      String country, String email, String tin, Date pickupTime) {
-        this.name = name;
-        this.phone = phone;
-        this.address = address;
-        this.pinCode = pinCode;
-        this.city = city;
-        this.state = state;
-        this.country = country;
-        this.email = email;
-        this.tin = tin;
-        this.pickupTime = pickupTime;
+    private PickupInfo(PickupInfoBuilder pickupInfoBuilder) {
+        this.name = pickupInfoBuilder.name;
+        this.phone = pickupInfoBuilder.phone;
+        this.address = pickupInfoBuilder.address;
+        this.pinCode = pickupInfoBuilder.pinCode;
+        this.city = pickupInfoBuilder.city;
+        this.state = pickupInfoBuilder.state;
+        this.country = pickupInfoBuilder.country;
+        this.email = pickupInfoBuilder.email;
+        this.tin = pickupInfoBuilder.tin;
+        this.pickupTime = pickupInfoBuilder.pickupTime;
     }
 
     public String getName() {
@@ -72,5 +71,43 @@ public class PickupInfo {
 
     public Date getPickupTime() {
         return pickupTime;
+    }
+
+
+    public static class PickupInfoBuilder {
+        private final String name;
+        private final String phone;
+        private final String address;
+        private final String pinCode;
+
+        private final String city;
+        private final String state;
+        private final String country;
+
+
+        private final String tin;
+        private final Date pickupTime;
+
+        private String email;
+
+        public PickupInfoBuilder(String name, String phone, String address, String pinCode, String city, String state, String country, String tin, Date pickupTime) {
+            this.name = name;
+            this.phone = phone;
+            this.address = address;
+            this.pinCode = pinCode;
+            this.city = city;
+            this.state = state;
+            this.country = country;
+            this.tin = tin;
+            this.pickupTime = pickupTime;
+        }
+
+        public void setEmail(String email) {
+            this.email = email;
+        }
+
+        public PickupInfo build() {
+            return new PickupInfo(this);
+        }
     }
 }
