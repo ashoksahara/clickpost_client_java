@@ -6,8 +6,8 @@ import org.testng.internal.Nullable;
 public class ShipmentItemInfo {
     private final String sku;
     private final String description;
-    private final int quantity;
-    private final float price;
+    private final Integer quantity;
+    private final Float price;
 
     @Nullable
     private final ShipmentItemAdditionalInfo shipmentItemAdditionalInfo;
@@ -29,11 +29,11 @@ public class ShipmentItemInfo {
         return description;
     }
 
-    public int getQuantity() {
+    public Integer getQuantity() {
         return quantity;
     }
 
-    public float getPrice() {
+    public Float getPrice() {
         return price;
     }
 
@@ -44,12 +44,12 @@ public class ShipmentItemInfo {
     public static class ShipmentItemInfoBuilder {
         private final String sku;
         private final String description;
-        private final int quantity;
-        private final float price;
+        private final Integer quantity;
+        private final Float price;
 
         private ShipmentItemAdditionalInfo shipmentItemAdditionalInfo;
 
-        public ShipmentItemInfoBuilder(String sku, String description, int quantity, float price) {
+        public ShipmentItemInfoBuilder(String sku, String description, Integer quantity, Float price) {
             this.sku = sku;
             this.description = description;
             this.quantity = quantity;

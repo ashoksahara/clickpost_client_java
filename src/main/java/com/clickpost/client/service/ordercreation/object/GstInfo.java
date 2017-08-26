@@ -8,18 +8,18 @@ public class GstInfo {
     private final String hsnCode;
     private final String invoiceReference;
     private final Boolean isSellerRegisteredUnderGst;
-    private final float taxableValue;
+    private final Float taxableValue;
     private final String placeOfSupply;
     private final String ewaybillSerialNumber;
-    private final float sgstAmount;
-    private final float cgstAmount;
-    private final float igstAmount;
-    private final float gstTaxBase;
-    private final float gstDiscount;
-    private final float sgstTaxRate;
-    private final float cgstTaxRate;
-    private final float igstTaxRate;
-    private final float gstTotalTax;
+    private final Float sgstAmount;
+    private final Float cgstAmount;
+    private final Float igstAmount;
+    private final Float gstTaxBase;
+    private final Float gstDiscount;
+    private final Float sgstTaxRate;
+    private final Float cgstTaxRate;
+    private final Float igstTaxRate;
+    private final Float gstTotalTax;
 
     private GstInfo(GstInfoBuilder gstInfoBuilder) {
         this.sellerGstin = gstInfoBuilder.sellerGstin;
@@ -66,7 +66,7 @@ public class GstInfo {
         return isSellerRegisteredUnderGst;
     }
 
-    public float getTaxableValue() {
+    public Float getTaxableValue() {
         return taxableValue;
     }
 
@@ -78,39 +78,39 @@ public class GstInfo {
         return ewaybillSerialNumber;
     }
 
-    public float getSgstAmount() {
+    public Float getSgstAmount() {
         return sgstAmount;
     }
 
-    public float getCgstAmount() {
+    public Float getCgstAmount() {
         return cgstAmount;
     }
 
-    public float getIgstAmount() {
+    public Float getIgstAmount() {
         return igstAmount;
     }
 
-    public float getGstTaxBase() {
+    public Float getGstTaxBase() {
         return gstTaxBase;
     }
 
-    public float getGstDiscount() {
+    public Float getGstDiscount() {
         return gstDiscount;
     }
 
-    public float getSgstTaxRate() {
+    public Float getSgstTaxRate() {
         return sgstTaxRate;
     }
 
-    public float getCgstTaxRate() {
+    public Float getCgstTaxRate() {
         return cgstTaxRate;
     }
 
-    public float getIgstTaxRate() {
+    public Float getIgstTaxRate() {
         return igstTaxRate;
     }
 
-    public float getGstTotalTax() {
+    public Float getGstTotalTax() {
         return gstTotalTax;
     }
 
@@ -121,20 +121,20 @@ public class GstInfo {
         private final String hsnCode;
         private final String invoiceReference;
         private final Boolean isSellerRegisteredUnderGst;
-        private final float taxableValue;
+        private final Float taxableValue;
         private final String placeOfSupply;
         private final String ewaybillSerialNumber;
-        private final float sgstAmount;
-        private final float cgstAmount;
-        private final float igstAmount;
-        private final float gstTaxBase;
-        private final float gstDiscount;
-        private final float sgstTaxRate;
-        private final float cgstTaxRate;
-        private final float igstTaxRate;
-        private final float gstTotalTax;
+        private final Float sgstAmount;
+        private final Float cgstAmount;
+        private final Float igstAmount;
+        private final Float gstTaxBase;
+        private final Float gstDiscount;
+        private final Float sgstTaxRate;
+        private final Float cgstTaxRate;
+        private final Float igstTaxRate;
+        private final Float gstTotalTax;
 
-        public GstInfoBuilder(String sellerGstin, String enterpriseGstin, String consigneeGstin, String hsnCode, String invoiceReference, Boolean isSellerRegisteredUnderGst, float taxableValue, String placeOfSupply, String ewaybillSerialNumber, float sgstAmount, float cgstAmount, float igstAmount, float gstTaxBase, float gstDiscount, float sgstTaxRate, float cgstTaxRate, float igstTaxRate, float gstTotalTax) {
+        public GstInfoBuilder(String sellerGstin, String enterpriseGstin, String consigneeGstin, String hsnCode, String invoiceReference, Boolean isSellerRegisteredUnderGst, Float taxableValue, String placeOfSupply, String ewaybillSerialNumber, Float sgstAmount, Float cgstAmount, Float igstAmount, Float gstTaxBase, Float gstDiscount, Float sgstTaxRate, Float cgstTaxRate, Float igstTaxRate, Float gstTotalTax) {
             this.sellerGstin = sellerGstin;
             this.enterpriseGstin = enterpriseGstin;
             this.consigneeGstin = consigneeGstin;

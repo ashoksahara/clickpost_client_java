@@ -2,10 +2,10 @@ package com.clickpost.client.service.ordercreation.object;
 
 
 public class ShipmentItemAdditionalInfo {
-    private final int weight;
-    private final int breadth;
-    private final int length;
-    private final int height;
+    private final Integer weight;
+    private final Integer breadth;
+    private final Integer length;
+    private final Integer height;
 
     private ShipmentItemAdditionalInfo(ShipmentItemAdditionalInfoBuilder shipmentItemAdditionalInfoBuilder) {
         this.weight = shipmentItemAdditionalInfoBuilder.weight;
@@ -14,29 +14,29 @@ public class ShipmentItemAdditionalInfo {
         this.height = shipmentItemAdditionalInfoBuilder.height;
     }
 
-    public int getWeight() {
+    public Integer getWeight() {
         return weight;
     }
 
-    public int getBreadth() {
+    public Integer getBreadth() {
         return breadth;
     }
 
-    public int getLength() {
+    public Integer getLength() {
         return length;
     }
 
-    public int getHeight() {
+    public Integer getHeight() {
         return height;
     }
 
     public static class ShipmentItemAdditionalInfoBuilder {
-        private final int weight;
-        private final int breadth;
-        private final int length;
-        private final int height;
+        private final Integer weight;
+        private final Integer breadth;
+        private final Integer length;
+        private final Integer height;
 
-        public ShipmentItemAdditionalInfoBuilder(int weight, int breadth, int length, int height) {
+        public ShipmentItemAdditionalInfoBuilder(Integer weight, Integer breadth, Integer length, Integer height) {
             this.weight = weight;
             this.breadth = breadth;
             this.length = length;

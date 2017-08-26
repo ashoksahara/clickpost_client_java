@@ -52,6 +52,7 @@ public class OrderCreationServiceImpl implements OrderCreationService {
             InputStream responseStream = response.getEntity().getContent();
             OrderCreationV3ResponseResultJson orderCreationV3ResponseResultJson = objectMapper.readValue(responseStream
                     , OrderCreationV3ResponseResultJson.class);
+            response.close();
             if (orderCreationV3ResponseResultJson.getResponseMetaJson().getStatusCode() != 200) {
                 throw new OrderCreationException(orderCreationV3ResponseResultJson.getResponseMetaJson().getMessage());
             }

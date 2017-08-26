@@ -11,13 +11,13 @@ public class AdditionalInfo {
     private final String rvpReason;
 
     @Nullable
-    private final boolean async;
+    private final Boolean async;
 
     @Nullable
     private final String awbNumber;
 
     @Nullable
-    private final boolean label;
+    private final Boolean label;
 
     @Nullable
     private final String priority;
@@ -40,7 +40,7 @@ public class AdditionalInfo {
         return rvpReason;
     }
 
-    public boolean isAsync() {
+    public Boolean isAsync() {
         return async;
     }
 
@@ -48,7 +48,7 @@ public class AdditionalInfo {
         return awbNumber;
     }
 
-    public boolean isLabel() {
+    public Boolean isLabel() {
         return label;
     }
 

@@ -5,17 +5,17 @@ import java.util.Date;
 
 public class ShipmentDetail {
     private final ShipmentItemInfo[] shipmentItemInfo;
-    private final int length;
-    private final int height;
-    private final int breadth;
-    private final float weight;
+    private final Integer length;
+    private final Integer height;
+    private final Integer breadth;
+    private final Float weight;
     private final OrderType orderType;
-    private final float codValue;
+    private final Float codValue;
     private final String referenceNumber;
     private final String invoiceNumber;
-    private final float invoiceValue;
+    private final Float invoiceValue;
     private final Date invoiceDate;
-    private final int courierPartner;
+    private final Integer courierPartner;
 
     private ShipmentDetail(ShipmentDetailBuilder shipmentDetailBuilder) {
         this.shipmentItemInfo = shipmentDetailBuilder.shipmentItemInfo;
@@ -36,19 +36,19 @@ public class ShipmentDetail {
         return shipmentItemInfo;
     }
 
-    public int getLength() {
+    public Integer getLength() {
         return length;
     }
 
-    public int getHeight() {
+    public Integer getHeight() {
         return height;
     }
 
-    public int getBreadth() {
+    public Integer getBreadth() {
         return breadth;
     }
 
-    public float getWeight() {
+    public Float getWeight() {
         return weight;
     }
 
@@ -56,7 +56,7 @@ public class ShipmentDetail {
         return orderType;
     }
 
-    public float getCodValue() {
+    public Float getCodValue() {
         return codValue;
     }
 
@@ -68,7 +68,7 @@ public class ShipmentDetail {
         return invoiceNumber;
     }
 
-    public float getInvoiceValue() {
+    public Float getInvoiceValue() {
         return invoiceValue;
     }
 
@@ -76,25 +76,25 @@ public class ShipmentDetail {
         return invoiceDate;
     }
 
-    public int getCourierPartner() {
+    public Integer getCourierPartner() {
         return courierPartner;
     }
 
     public static class ShipmentDetailBuilder {
         private final ShipmentItemInfo[] shipmentItemInfo;
-        private final int length;
-        private final int height;
-        private final int breadth;
-        private final float weight;
+        private final Integer length;
+        private final Integer height;
+        private final Integer breadth;
+        private final Float weight;
         private final OrderType orderType;
-        private final float codValue;
+        private final Float codValue;
         private final String referenceNumber;
         private final String invoiceNumber;
-        private final float invoiceValue;
+        private final Float invoiceValue;
         private final Date invoiceDate;
-        private final int courierPartner;
+        private final Integer courierPartner;
 
-        public ShipmentDetailBuilder(ShipmentItemInfo[] shipmentItemInfo, int length, int height, int breadth, float weight, OrderType orderType, float codValue, String referenceNumber, String invoiceNumber, float invoiceValue, Date invoiceDate, int courierPartner) {
+        public ShipmentDetailBuilder(ShipmentItemInfo[] shipmentItemInfo, Integer length, Integer height, Integer breadth, Float weight, OrderType orderType, Float codValue, String referenceNumber, String invoiceNumber, Float invoiceValue, Date invoiceDate, Integer courierPartner) {
             this.shipmentItemInfo = shipmentItemInfo;
             this.length = length;
             this.height = height;
